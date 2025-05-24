@@ -1,5 +1,17 @@
+name: IITM Action Test
+
+on: 
+  push:
+    branches: [main]
+  workflow_dispatch:  # allows manual trigger
+
 jobs:
-  test:
+  test-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: 21f3001750@ds.study.iitm.ac.in
-        run: echo "Hello, world!"
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Say Hello - 21f3001750@ds.study.iitm.ac.in
+        run: echo "Hello from GitHub Actions!"
+
